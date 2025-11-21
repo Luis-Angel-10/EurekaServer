@@ -1,10 +1,27 @@
+server:
+  port: ${PORT:8761}
+
+spring:
+  application:
+    name: eureka-server
+
+  freemarker:
+    enabled: true
+
+spring.mvc.view.prefix: classpath:/templates/
+spring.mvc.view.suffix: .ftl
+
 eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
-  instance:
-    hostname: localhost
 
-spring:
-  freemarker:
-    enabled: true
+  instance:
+    hostname: ${HOSTNAME:eureka-server.onrender.com}
+    prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
