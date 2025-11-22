@@ -17,7 +17,6 @@ eureka:
     fetch-registry: false
 
   instance:
-    # Render genera la URL pública del servicio en esta variable
     hostname: ${RENDER_EXTERNAL_URL:eurekaserver-dg33.onrender.com}
     prefer-ip-address: true
 
